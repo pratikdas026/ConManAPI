@@ -19,6 +19,12 @@ app.use('/api/contact', contactRoutes);
 app.use('/api/user', authorRoutes);
 dbConn();
 
+app.get("/", (req, res) => {
+	res.status(200).json({
+		message: "Welcome to Chronicle!"
+	});
+})
+
 app.listen(port, () => {
     console.log(`Server started at port ${port}`);
 })
